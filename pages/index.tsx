@@ -10,19 +10,15 @@ const inter = Inter({ subsets: ["latin"] })
 const Home = () => { 
     const [userFind, setUserFind] = useState<user | null>(null)
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    console.log(userFind)
 
     return (
-        <main className={`min-h-screen flex-col p-[2rem] font-sans bg-[#0e1129] text-white ${inter.className}`}>
-            <section className="max-w-[500px] m-auto">
-                <h1 className="text-center bottom-[1rem] font-bold text-3xl p-4">
-                    Github Finder
-                </h1>
+        <section className={`min-h-screen flex-col p-[2rem] font-sans ${inter.className}`}>
+            <div className="max-w-[500px] m-auto">
                 <Search userFind={(user: any) => setUserFind(user)} isLoading={setIsLoading} />
                 {isLoading && userFind !== null && <span className="flex justify-center items-center"><Loading /></span>}
                 {userFind !== null ? <UserProfile {...userFind} /> : 'User não encotrado'}
-            </section>
-        </main>
+            </div>
+        </section>
     )
 }
 

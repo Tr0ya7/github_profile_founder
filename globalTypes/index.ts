@@ -1,1 +1,2 @@
 export type user = { avatar_url: string; login: string; location: string; followers: number; following: number }
+export type repositores = { name: string; html_url: string; language: string; stargazers: number; forks: number }
