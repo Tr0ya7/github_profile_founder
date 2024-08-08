@@ -12,7 +12,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
     return (
-        <section className={`min-h-screen flex-col p-[2rem] font-sans ${inter.className}`}>
+        <section className={`min-h-screen flex-col font-sans overflow-hidden xs:px-0 sm:p-[2rem] ${inter.className}`}>
             <div className="max-w-[500px] m-auto">
                 <Search userFind={(user: any) => setUserFind(user)} isLoading={setIsLoading} />
                 {isLoading && userFind !== null && <span className="flex justify-center items-center"><Loading /></span>}
